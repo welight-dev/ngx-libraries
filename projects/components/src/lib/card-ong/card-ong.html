@@ -1,0 +1,32 @@
+<mat-card class="container" *ngIf="ready">
+  <div
+    mat-card-image
+    class="background-image"
+    [style.background-image]="ongBackgroundImage"
+    wePreloadImage
+    [preloadUrl]="ongBackgroundImage"
+  ></div>
+
+  <mat-checkbox
+    #checkboxRef
+    *ngIf="isCheckable"
+    [checked]="checked"
+    (change)="onCheckboxChange($event)"
+  ></mat-checkbox>
+
+  <div
+    mat-card-avatar
+    class="avatar-image"
+    [style.background-image]="ongAvatarImage"
+  ></div>
+
+  <mat-card-title *ngIf="showTitle" [innerHtml]="ongName"></mat-card-title>
+
+  <mat-card-content *ngIf="showDescription">
+    <p [innerHtml]="ongDescription"></p>
+  </mat-card-content>
+
+  <mat-card-actions *ngIf="showButtons && hasWeCardButtons">
+    <ng-content select="[weCardButtons]"></ng-content>
+  </mat-card-actions>
+</mat-card>

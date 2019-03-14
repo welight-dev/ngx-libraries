@@ -11,12 +11,12 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
-  }
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "components": ["dist/components"],
+      "components/*": ["dist/components/*"]
+    }
+  },
+  "include": ["./node_modules/welight-api-ts/**/*.ts", "src/**/*.ts"]
 }

@@ -1,0 +1,13 @@
+{
+  "name": "@welight/ngx-components",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0 || ^7.0.0",
+    "@angular/core": "^6.0.0 || ^7.0.0",
+    "@angular/material": "^6.0.0 || ^7.0.0",
+    "@angular/cdk": "^6.0.0 || ^7.0.0",
+    "@angular/animations": "^6.0.0 || ^7.0.0",
+    "hammerjs": "^2.0.8",
+    "welight-api-ts": "^1.0.142"
+  }
+}

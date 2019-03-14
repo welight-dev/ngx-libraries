@@ -1,0 +1,50 @@
+:host {
+  width: 100%;
+  max-width: 390px;
+  display: block;
+}
+
+.container {
+  .background-image {
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 2;
+    background-position: center center;
+    background-size: cover;
+    width: auto !important;
+    min-height: 170px;
+    max-height: 170px;
+  }
+
+  .avatar-image {
+    margin: 0 auto;
+    background-size: 70% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    width: 120px !important;
+    height: 120px !important;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border: 0.5px solid #ebebeb;
+    position: relative;
+    z-index: 3;
+    margin-top: -80px;
+    margin-bottom: 30px;
+  }
+
+  .mat-card-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .mat-checkbox {
+    padding: 4px 8px 8px;
+    background-color: #fff;
+    border-bottom-right-radius: 5px;
+    z-index: 3;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
