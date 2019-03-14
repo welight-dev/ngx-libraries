@@ -1,4 +1,4 @@
-![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/welight/ngx-libraries/master.svg)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/welight-dev/ngx-libraries.svg)
 
 # Welight Angular Libraries
 > Libraries to use in Welight angular projects.
