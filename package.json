@@ -1,6 +1,6 @@
 {
   "name": "@welight/ngx-libraries",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "build:ngx-components": "ng build --prod --project components"
@@ -46,6 +46,7 @@
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
+    "tslint-config-airbnb": "^5.11.1",
     "typescript": "~3.2.2"
   }
 }

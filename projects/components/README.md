@@ -1,7 +1,7 @@
-![npm (scoped)](https://img.shields.io/npm/v/@welight/ngx-components.svg)
-
 # Welight Components
-> Components for Angular2+ to use in Welight projects.
+> Components for Angular to use in Welight projects.
+
+![npm (scoped)](https://img.shields.io/npm/v/@welight/ngx-components.svg)
 
 ## Installation
 
@@ -47,6 +47,8 @@ export class AppModule {}
 | checkboxChange | EventEmitter\<WeCardOngChange\> | When checkbox clicked |
 
 #### Example
+
+> **Note:** To make the best use of the library, install in you project [@welight/welight-api-ts](https://github.com/welight-dev/welight-api-ts).
 
 <details>
   <summary>HTML Template</summary>

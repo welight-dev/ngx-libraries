@@ -7,7 +7,7 @@ import {
   OnInit,
   ViewChild,
   ContentChildren,
-  QueryList
+  QueryList,
 } from '@angular/core';
 
 /** angular material */
@@ -35,16 +35,16 @@ export class WeCardOngChange {
   selector: 'we-card-ong',
   templateUrl: 'card-ong.html',
   styleUrls: ['card-ong.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WeCardOng implements OnInit {
   /** checkbox ref */
   @ViewChild('checkboxRef')
-  private _checkboxRef: MatCheckbox;
+  private checkboxRef: MatCheckbox;
 
   /** card buttons */
   @ContentChildren(WeCardOngButtons)
-  private _weCardButtons: QueryList<WeCardOngButtons>;
+  private weCardButtons: QueryList<WeCardOngButtons>;
 
   /** Display ong title. */
   @Input() showTitle = true;
@@ -84,7 +84,7 @@ export class WeCardOng implements OnInit {
     /** generate exception when `this.ong` is not valid */
     if (!this.ong || !(this.ong instanceof Ong.Ong)) {
       throw new Error(
-        'O parâmetro `ong` deve ser informado corretamente no componente `<welight-card-ong>`.'
+        'O parâmetro `ong` deve ser informado corretamente no componente `<welight-card-ong>`.',
       );
     }
 
@@ -150,7 +150,7 @@ export class WeCardOng implements OnInit {
 
   /** has `[weCardButtons]` */
   public get hasWeCardButtons(): boolean {
-    return !!this._weCardButtons.length;
+    return !!this.weCardButtons.length;
   }
 
   /*---------------------------------------------

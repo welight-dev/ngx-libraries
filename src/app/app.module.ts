@@ -12,6 +12,6 @@ import { WelightService } from './welight.service';
   declarations: [AppComponent],
   imports: [BrowserModule, BrowserAnimationsModule, WeComponentsModule],
   providers: [WelightService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

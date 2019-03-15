@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import {
   MatCheckboxModule,
   MatCardModule,
-  MatButtonModule
+  MatButtonModule,
 } from '@angular/material';
 
 /** CARD ONG COMPONENT */
@@ -17,7 +17,7 @@ import { WePreloadImage } from './card-ong/preload-image';
     /** components */
     WeCardOng,
     WeCardOngButtons,
-    WePreloadImage
+    WePreloadImage,
   ],
   imports: [CommonModule, MatCheckboxModule, MatCardModule, MatButtonModule],
   exports: [
@@ -27,7 +27,7 @@ import { WePreloadImage } from './card-ong/preload-image';
     MatCardModule,
     /** components */
     WeCardOng,
-    WeCardOngButtons
-  ]
+    WeCardOngButtons,
+  ],
 })
 export class WeComponentsModule {}

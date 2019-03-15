@@ -11,11 +11,11 @@ import { Ong } from 'welight-api-ts';
       [isCheckable]="true"
     ></we-card-ong>
   `,
-  styles: []
+  styles: [],
 })
 export class AppComponent implements OnInit {
   /** ong */
-  private _ong: Ong.Ong;
+  private ong: Ong.Ong;
 
   /** constructor */
   constructor(public welight: WelightService) {}
@@ -26,22 +26,22 @@ export class AppComponent implements OnInit {
   }
 
   /** return ongs. */
-  public get ongs(): Array<Ong.Ong> {
+  public get ongs(): Ong.Ong[] {
     return this.welight.ong.page.objects || [];
   }
 
   /** random ong */
   public get randomOng(): Ong.Ong {
     // exist ong.
-    if (this._ong) {
-      return this._ong;
+    if (this.ong) {
+      return this.ong;
     }
 
     const ongsLength = this.ongs.length;
     const randomIdx = Math.floor(Math.random() * ongsLength);
 
     // set ong.
-    this._ong = this.ongs[randomIdx];
-    return this._ong;
+    this.ong = this.ongs[randomIdx];
+    return this.ong;
   }
 }
