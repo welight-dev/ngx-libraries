@@ -27,7 +27,7 @@ export class AppModule {}
 
 ## Components
 
-### WeCardOng ```<welight-card-ong>```
+### WelightCardOng ```<welight-card-ong>```
 
 #### Inputs
 
@@ -48,7 +48,7 @@ export class AppModule {}
 
 #### Example
 
-[Demo](https://stackblitz.com/edit/welight-ngx-components/card-ong)
+[Demo](https://welight-ngx-components.stackblitz.io/card-ong)
 
 > **Note:** To make the best use of the library, install in you project [@welight/welight-api-ts](https://github.com/welight-dev/welight-api-ts).
 
@@ -93,7 +93,7 @@ export class AppModule {}
 </details>
 
 
-### WeShimmerPlaceholder ```<welight-shimmer-placeholder>```
+### WelightShimmerPlaceholder ```<welight-shimmer-placeholder>```
 
 #### Inputs
 
@@ -112,7 +112,7 @@ export class AppModule {}
 
 #### Example
 
-[Demo](https://stackblitz.com/edit/welight-ngx-components/shimmer-placeholder)
+[Demo](https://welight-ngx-components.stackblitz.io/shimmer-placeholder)
 
 <details>
   <summary>HTML Template</summary>
