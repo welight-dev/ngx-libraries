@@ -5,12 +5,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /** lib components */
-import { WeComponentsModule } from 'projects/components/src';
+import { WelightComponentsModule } from 'projects/components/src';
 import { WelightService } from './welight.service';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, WeComponentsModule],
+  imports: [BrowserModule, BrowserAnimationsModule, WelightComponentsModule],
   providers: [WelightService],
   bootstrap: [AppComponent],
 })

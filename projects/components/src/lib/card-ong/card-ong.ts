@@ -14,11 +14,11 @@ import {
 import { MatCheckboxChange, MatCheckbox } from '@angular/material';
 
 /** welight lib */
-import { Ong } from 'welight-api-ts';
-import { WeCardOngButtons } from './card-ong-buttons';
+import { Ong } from '@welight/welight-api-ts';
+import { WelightCardOngButtons } from './card-ong-buttons';
 
 /** Change event object */
-export class WeCardOngChange {
+export class WelightCardOngChange {
   /** event type */
   type: string;
   /** Ong object */
@@ -32,19 +32,19 @@ export class WeCardOngChange {
 }
 
 @Component({
-  selector: 'we-card-ong',
+  selector: 'welight-card-ong',
   templateUrl: 'card-ong.html',
   styleUrls: ['card-ong.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WeCardOng implements OnInit {
+export class WelightCardOng implements OnInit {
   /** checkbox ref */
   @ViewChild('checkboxRef')
   private checkboxRef: MatCheckbox;
 
   /** card buttons */
-  @ContentChildren(WeCardOngButtons)
-  private weCardButtons: QueryList<WeCardOngButtons>;
+  @ContentChildren(WelightCardOngButtons)
+  private weCardButtons: QueryList<WelightCardOngButtons>;
 
   /** Display ong title. */
   @Input() showTitle = true;
@@ -98,7 +98,7 @@ export class WeCardOng implements OnInit {
 
   /** Dispatch changes */
   private _dispatchChanges(type: string, ong: Ong.Ong, payload?: any) {
-    const event = new WeCardOngChange();
+    const event = new WelightCardOngChange();
     event.type = type;
     event.ong = ong;
     event.payload = payload;
@@ -153,6 +153,11 @@ export class WeCardOng implements OnInit {
     return !!this.weCardButtons.length;
   }
 
+  /** Shimmer placeholder data */
+  public get shimmerPlaceholderData(): string[] {
+    return [this.ongAvatarImage, this.ongBackgroundImage];
+  }
+
   /*---------------------------------------------
    | PUBLIC METHODS
    ---------------------------------------------*/
@@ -161,7 +166,7 @@ export class WeCardOng implements OnInit {
   public onCheckboxChange(matCheckbox: MatCheckboxChange): void {
     const ong = this.ong || null;
 
-    const event = new WeCardOngChange();
+    const event = new WelightCardOngChange();
     event.type = 'checkboxChange';
     event.ong = ong;
     event.checked = matCheckbox.checked;

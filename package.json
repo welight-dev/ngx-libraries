@@ -1,9 +1,11 @@
 {
   "name": "@welight/ngx-libraries",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
-    "build:ngx-components": "ng build --prod --project components"
+    "lint": "yarn tslint --project .",
+    "build:ngx-components": "ng build --prod --project components",
+    "publish:ngx-components": "npm run build:ngx-components && cd dist/components/ && npm publish --access=public"
   },
   "dependencies": {
     "@angular/animations": "~7.2.0",
@@ -16,11 +18,12 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@welight/welight-api-ts": "^1.0.144",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
+    "lodash": "^4.17.11",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "welight-api-ts": "^1.0.142",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -31,6 +34,8 @@
     "@angular/language-service": "~7.2.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jest": "^24.0.11",
+    "@types/lodash": "^4.14.123",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",

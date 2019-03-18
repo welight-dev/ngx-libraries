@@ -18,5 +18,9 @@
       "components/*": ["dist/components/*"]
     }
   },
-  "include": ["./node_modules/welight-api-ts/**/*.ts", "src/**/*.ts"]
+  "include": [
+    "src/**/*",
+    "projects/**/*",
+    "**/node_modules/@welight/welight-api-ts/**/*.ts"
+  ]
 }

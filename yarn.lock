@@ -396,6 +396,23 @@
   dependencies:
     "@types/jasmine" "*"
 
+"@types/jest-diff@*":
+  version "20.0.1"
+  resolved "https://registry.yarnpkg.com/@types/jest-diff/-/jest-diff-20.0.1.tgz#35cc15b9c4f30a18ef21852e255fdb02f6d59b89"
+  integrity sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
+
+"@types/jest@^24.0.11":
+  version "24.0.11"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.11.tgz#1f099bea332c228ea6505a88159bfa86a5858340"
+  integrity sha512-2kLuPC5FDnWIDvaJBzsGTBQaBbnDweznicvK7UGYzlIJP4RJR2a4A/ByLUXEyEgag6jz8eHdlWExGDtH3EYUXQ==
+  dependencies:
+    "@types/jest-diff" "*"
+
+"@types/lodash@^4.14.123":
+  version "4.14.123"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
+  integrity sha512-pQvPkc4Nltyx7G1Ww45OjVqUsJP4UsZm+GWJpigXgkikZqJgRm4c48g027o6tdgubWHwFRF15iFd+Y4Pmqv6+Q==
+
 "@types/node@*":
   version "11.9.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.5.tgz#011eece9d3f839a806b63973e228f85967b79ed3"
@@ -572,6 +589,15 @@
     "@webassemblyjs/ast" "1.7.11"
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
+
+"@welight/welight-api-ts@^1.0.144":
+  version "1.0.144"
+  resolved "https://registry.yarnpkg.com/@welight/welight-api-ts/-/welight-api-ts-1.0.144.tgz#c6d7ee702f3adc9d2ce7f835784584b09f4e98fa"
+  integrity sha512-ffi5KCSi00BXGRA2o8GcATTkjFeusNVdx+Y+KTYYeCasZgNvVC16cwB3JJn1sfFvA7o2EDgotQZ3xEIKO0xfZg==
+  dependencies:
+    "@types/crypto-js" "^3.1.43"
+    crypto-js "^3.1.9-1"
+    ts-resource-tastypie "^1.0.40"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -7661,15 +7687,6 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
   integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
-
-welight-api-ts@^1.0.142:
-  version "1.0.142"
-  resolved "https://registry.yarnpkg.com/welight-api-ts/-/welight-api-ts-1.0.142.tgz#5d43ecaf6d53e29110211646597d3b104d707135"
-  integrity sha512-mFYPUYT8Exur70Fvp2UvHQu7EoUAJNQQW485nxOlo99UUp0qMpCkYoZnsortteha8PaSVoBh2MLsVSD/D/vNAg==
-  dependencies:
-    "@types/crypto-js" "^3.1.43"
-    crypto-js "^3.1.9-1"
-    ts-resource-tastypie "^1.0.40"
 
 when@~3.6.x:
   version "3.6.4"

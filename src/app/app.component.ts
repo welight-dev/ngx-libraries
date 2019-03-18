@@ -1,17 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { WelightService } from './welight.service';
-import { Ong } from 'welight-api-ts';
+import { Ong } from '@welight/welight-api-ts';
 
 @Component({
   selector: 'app-root',
   template: `
-    <we-card-ong
-      *ngIf="randomOng"
-      [ong]="randomOng"
-      [isCheckable]="true"
-    ></we-card-ong>
+    <ng-container *ngIf="ongs.length">
+      <welight-card-ong
+        *ngFor="let ong of ongs"
+        [ong]="ong"
+        [isCheckable]="true"
+      ></welight-card-ong>
+    </ng-container>
   `,
-  styles: [],
+  styles: [
+    `
+      :host {
+        padding: 20px 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 840px;
+        margin: 0 auto;
+        align-items: flex-start;
+      }
+
+      /deep/ welight-card-ong {
+        padding: 10px;
+      }
+    `,
+  ],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   /** ong */
@@ -22,7 +40,7 @@ export class AppComponent implements OnInit {
 
   /** initialize */
   ngOnInit() {
-    this.welight.ong.objects.find();
+    this.welight.ong.objects.find({ limit: 0 });
   }
 
   /** return ongs. */

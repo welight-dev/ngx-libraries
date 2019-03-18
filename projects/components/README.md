@@ -14,12 +14,12 @@
 Configure `AppModule` to use Welight components.
 
 ```typescript
-import { WeComponentsModule } from '@welight/ngx-components';
+import { WelightComponentsModule } from '@welight/ngx-components';
 
 @NgModule({
   imports: [
     // others modules...
-    WeComponentsModule
+    WelightComponentsModule
   ]
 })
 export class AppModule {}
@@ -27,12 +27,12 @@ export class AppModule {}
 
 ## Components
 
-### WeCardOng ```<we-card-ong>```
+### WeCardOng ```<welight-card-ong>```
 
 #### Inputs
 
 | Name | Type | Description |
-|:----|:-----:|:-----------:|
+|:----|:-----:|:-----------|
 | showTitle | boolean | Display name of Ong. |
 | showDescription | boolean | Display description of Ong. |
 | isCheckable | boolean | Display checkbox into card |
@@ -43,10 +43,12 @@ export class AppModule {}
 #### Outputs
 
 | Name | Type | Description |
-|:----|:-----:|:-----------:|
-| checkboxChange | EventEmitter\<WeCardOngChange\> | When checkbox clicked |
+|:----|:-----:|:-----------|
+| checkboxChange | EventEmitter\<WelightCardOngChange\> | When checkbox clicked |
 
 #### Example
+
+[Demo](https://stackblitz.com/edit/welight-ngx-components/card-ong)
 
 > **Note:** To make the best use of the library, install in you project [@welight/welight-api-ts](https://github.com/welight-dev/welight-api-ts).
 
@@ -54,22 +56,22 @@ export class AppModule {}
   <summary>HTML Template</summary>
 
   ```html
-  <we-card-ong
+  <welight-card-ong
     *ngIf="ong"
     [ong]="ong"
     [isCheckable]="true"
     [checked]="true"
     [showDescription]="false"
     (checkboxChange)="changeOng($event)"
-  ></we-card-ong>
+  ></welight-card-ong>
   ```
 </details>
 
 <details>
   <summary>Typescript File</summary>
 
-  ```typescript
-  import { WeCardOngChange } from '@welight/ngx-components';
+  ```javascript
+  import { WelightCardOngChange } from '@welight/ngx-components';
 
   @Component({
     selector: 'example'
@@ -83,10 +85,68 @@ export class AppModule {}
       this.ong = await this.service.ongs.objects.find()[0];
     }
 
-    changeOng(event: WeCardOngChange) {
+    changeOng(event: WelightCardOngChange) {
       console.log(event);
     }
   }
   ```
 </details>
 
+
+### WeShimmerPlaceholder ```<welight-shimmer-placeholder>```
+
+#### Inputs
+
+| Name | Type | Description |
+|:----|:-----:|:-----------|
+| data | Promise \| string \| string[]  | Array of URLs or Promise to resolve. |
+| forceResult | boolean | Force display result when exists error. |
+
+#### Outputs
+
+| Name | Type | Description |
+|:----|:-----:|:-----------|
+| onComplete | EventEmitter\<any\> | When finish load. |
+| onSuccess | EventEmitter\<any\> | When finish load with success. |
+| onError | EventEmitter\<any\> | When finish load with error. |
+
+#### Example
+
+[Demo](https://stackblitz.com/edit/welight-ngx-components/shimmer-placeholder)
+
+<details>
+  <summary>HTML Template</summary>
+
+  ```html
+  <welight-shimmer-placeholder [data]="data">
+    <welight-placeholder-container>
+      <p wePlaceholderItem height="20px"></p>
+    </welight-placeholder-container>
+
+    <welight-shimmer-result>
+      <p>Lorem Ipsum...<p>
+    </welight-shimmer-result>
+  </welight-shimmer-placeholder>
+  ```
+</details>
+
+<details>
+  <summary>Typescript File</summary>
+
+  ```typescript
+  @Component({
+    selector: 'example'
+  })
+  export class ExampleComponent {
+    data: Promise<any>;
+
+    ngOnInit() {
+      this.ong = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve();
+        }, 5000);
+      });
+    }
+  }
+  ```
+</details>

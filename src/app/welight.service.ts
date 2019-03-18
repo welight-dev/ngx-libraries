@@ -1,4 +1,4 @@
-import { Ong, Config } from 'welight-api-ts';
+import { Ong, Config } from '@welight/welight-api-ts';
 import * as api from 'ts-resource-tastypie';
 
 export class WelightService {

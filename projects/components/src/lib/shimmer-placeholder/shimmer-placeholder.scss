@@ -1,0 +1,66 @@
+$base-color: #eeeeee;
+$animation-duration: 1.3s;
+
+@keyframes placeholder-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@mixin placeholder-shimmer() {
+  /** size **/
+  width: 100%;
+  height: 15px;
+
+  /** background **/
+  position: relative;
+  background-color: #f6f7f8 !important;
+  background-size: 900px 600px !important;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+
+  /** animation **/
+  animation-duration: $animation-duration;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholder-shimmer;
+  animation-timing-function: linear;
+}
+
+welight-shimmer-placeholder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  .shimmer-placeholder-container {
+    position: relative;
+    display: block;
+    z-index: 999;
+    width: 100%;
+    background: #ffffff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .we-placeholder-item,
+  [wePlaceholderItem] {
+    @include placeholder-shimmer();
+  }
+
+  .shimmer-result-container {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+}
