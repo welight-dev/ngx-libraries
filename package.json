@@ -1,11 +1,11 @@
 {
   "name": "@welight/ngx-libraries",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "lint": "yarn tslint --project .",
     "build:ngx-components": "ng build --prod --project components",
-    "publish:ngx-components": "npm run build:ngx-components && cd dist/components/ && npm publish --access=public"
+    "build:ngx-services": "ng build --prod --project services"
   },
   "dependencies": {
     "@angular/animations": "~7.2.0",
