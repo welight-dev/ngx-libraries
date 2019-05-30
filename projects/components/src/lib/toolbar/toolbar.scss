@@ -1,0 +1,142 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+mat-toolbar {
+  background: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid #ccc;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-icon {
+  padding: 0px 14px;
+  cursor: pointer;
+}
+
+.logo-image {
+  max-height: 70% !important;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  display: block;
+  border: 1px solid #ebebeb;
+  cursor: pointer;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.apps-menu-container {
+  width: 350px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  box-sizing: border-box;
+
+  .app-item {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+
+    span {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+  }
+}
+
+section.settings-menu {
+  min-width: 270px;
+
+  > picture {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    margin: 0 auto 15px auto;
+    background-image: url(https://apidev.welight.co/media/doador-empresa/logo/default.png);
+    overflow: hidden;
+
+    a {
+      background-color: rgba(0,0,0,0.7);
+      color: #FFFFFF;
+      font-weight: lighter;
+      font-size: 11px;
+      text-transform: uppercase;
+      align-self: stretch;
+      padding-bottom: 10px;
+      padding-top: 5px;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
+
+ul.noticiation-container {
+  padding: 20px 20px 0px 20px;
+  list-style-type: none;
+  margin: 0px;
+
+  li.item {
+    padding: 15px 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 13px;
+      color: #707070;
+    }
+
+    span.title {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      color: #707070;
+
+      mat-icon {
+        padding-left: 0px;
+      }
+
+      img {
+        margin-right: 15px;
+        max-width: 18px;
+        width: 100%;
+      }
+    }
+
+    &:first-child {
+      padding-top: 0px;
+    }
+
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
+
+  li.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

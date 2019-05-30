@@ -1,59 +1,91 @@
-<welight-shimmer-placeholder
-  [data]="shimmerPlaceholderData"
-  [forceResult]="true"
->
-  <welight-placeholder-container>
-    <mat-card class="container">
-      <div mat-card-image class="background-image" wePlaceholderItem></div>
-      <div mat-card-avatar class="avatar-image" wePlaceholderItem></div>
+<ng-container *ngIf="templateStyle === 'vertical'">
+  <welight-shimmer-placeholder [data]="shimmerPlaceholderData" [forceResult]="true">
+    <welight-placeholder-container>
+      <mat-card class="welight-card-container vertical">
+        <div mat-card-image class="background-image" wePlaceholderItem></div>
+        <div mat-card-avatar class="avatar-image" wePlaceholderItem></div>
 
-      <mat-card-title
-        wePlaceholderItem
-        width="45%"
-        height="25px"
-        mBottom="15px"
-        mTop="0px"
-      >
-      </mat-card-title>
+        <mat-card-title wePlaceholderItem width="45%" height="25px" mBottom="15px" mTop="0px">
+        </mat-card-title>
 
-      <mat-card-content>
-        <p wePlaceholderItem mBottom="5px" mTop="0px" height="12px"></p>
-        <p wePlaceholderItem mBottom="5px" mTop="0px" height="12px"></p>
-        <p wePlaceholderItem width="60%" mTop="0px" height="12px"></p>
-      </mat-card-content>
-    </mat-card>
-  </welight-placeholder-container>
+        <mat-card-content>
+          <p wePlaceholderItem mBottom="5px" mTop="0px" height="12px"></p>
+          <p wePlaceholderItem mBottom="5px" mTop="0px" height="12px"></p>
+          <p wePlaceholderItem width="60%" mTop="0px" height="12px"></p>
+        </mat-card-content>
+      </mat-card>
+    </welight-placeholder-container>
 
-  <welight-shimmer-result>
-    <mat-card class="container">
-      <div
-        mat-card-image
-        class="background-image"
-        [style.background-image]="ongBackgroundImage"
-      ></div>
+    <welight-shimmer-result>
+      <mat-card class="welight-card-container vertical">
+        <div mat-card-image class="background-image" [style.background-image]="ongBackgroundImage"></div>
 
-      <mat-checkbox
-        #checkboxRef
-        *ngIf="isCheckable"
-        [checked]="checked"
-        (change)="onCheckboxChange($event)"
-      ></mat-checkbox>
+        <mat-checkbox #checkboxRef *ngIf="isCheckable" [checked]="checked" (change)="onCheckboxChange($event)">
+        </mat-checkbox>
 
-      <div
-        mat-card-avatar
-        class="avatar-image"
-        [style.background-image]="ongAvatarImage"
-      ></div>
+        <div mat-card-avatar class="avatar-image" [style.background-image]="ongAvatarImage"></div>
 
-      <mat-card-title *ngIf="showTitle" [innerHtml]="ongName"></mat-card-title>
+        <mat-card-title *ngIf="showTitle" [innerHtml]="ongName"></mat-card-title>
 
-      <mat-card-content *ngIf="showDescription">
-        <p [innerHtml]="ongDescription"></p>
-      </mat-card-content>
+        <mat-card-content *ngIf="showDescription">
+          <p [innerHtml]="ongDescription"></p>
+        </mat-card-content>
 
-      <mat-card-actions *ngIf="showButtons && hasWeCardButtons">
-        <ng-content select="[weCardButtons]"></ng-content>
-      </mat-card-actions>
-    </mat-card>
-  </welight-shimmer-result>
-</welight-shimmer-placeholder>
+        <mat-card-actions *ngIf="showButtons && hasWeCardButtons">
+          <ng-container *ngTemplateOutlet="actionButtons"></ng-container>
+        </mat-card-actions>
+      </mat-card>
+    </welight-shimmer-result>
+  </welight-shimmer-placeholder>
+</ng-container>
+
+<ng-container *ngIf="templateStyle === 'horizontal'">
+  <welight-shimmer-placeholder [data]="shimmerPlaceholderData" [forceResult]="true">
+    <welight-placeholder-container>
+      <mat-card class="welight-card-container horizontal">
+        <div class="col left-content">
+          <div mat-card-image class="background-image" wePlaceholderItem></div>
+          <div mat-card-avatar class="avatar-image" wePlaceholderItem></div>
+        </div>
+
+        <div class="col content">
+          <mat-card-title wePlaceholderItem width="45%" height="25px" mBottom="15px" mTop="0px">
+          </mat-card-title>
+
+          <mat-card-content>
+            <p wePlaceholderItem mBottom="5px" mTop="0px" height="12px"></p>
+            <p wePlaceholderItem mBottom="5px" mTop="0px" height="12px"></p>
+            <p wePlaceholderItem width="60%" mTop="0px" height="12px"></p>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </welight-placeholder-container>
+
+    <welight-shimmer-result>
+      <mat-card class="welight-card-container horizontal">
+        <div class="col left-content">
+          <div mat-card-image class="background-image" [style.background-image]="ongBackgroundImage"></div>
+          <mat-checkbox #checkboxRef *ngIf="isCheckable" [checked]="checked" (change)="onCheckboxChange($event)">
+          </mat-checkbox>
+          <div mat-card-avatar class="avatar-image" [style.background-image]="ongAvatarImage"></div>
+        </div>
+
+        <div class="col content">
+          <mat-card-title *ngIf="showTitle" [innerHtml]="ongName"></mat-card-title>
+
+          <mat-card-content *ngIf="showDescription">
+            <p [innerHtml]="ongDescription"></p>
+          </mat-card-content>
+
+          <mat-card-actions *ngIf="showButtons && hasWeCardButtons">
+            <ng-container *ngTemplateOutlet="actionButtons"></ng-container>
+          </mat-card-actions>
+        </div>
+      </mat-card>
+    </welight-shimmer-result>
+  </welight-shimmer-placeholder>
+</ng-container>
+
+<ng-template #actionButtons>
+  <ng-content select="[weCardButtons]"></ng-content>
+</ng-template>

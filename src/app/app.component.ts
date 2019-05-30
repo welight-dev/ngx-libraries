@@ -5,30 +5,68 @@ import { Ong } from '@welight/welight-api-ts';
 @Component({
   selector: 'app-root',
   template: `
-    <ng-container *ngIf="ongs.length">
-      <welight-card-ong
-        *ngFor="let ong of ongs"
-        [ong]="ong"
-        [isCheckable]="true"
-      ></welight-card-ong>
-    </ng-container>
-  `,
-  styles: [
-    `
-      :host {
-        padding: 20px 0;
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-width: 840px;
-        margin: 0 auto;
-        align-items: flex-start;
-      }
+    <section>
+      <h1>Toolbar</h1>
+      <we-toolbar
+        logo="https://easyimpact-dev.welight.co/assets/welight-logo-backwhite.png"
+      ></we-toolbar>
+    </section>
 
-      /deep/ welight-card-ong {
-        padding: 10px;
-      }
-    `,
-  ],
+    <section>
+      <h1>Card</h1>
+
+      <section style="display: inline-flex; flex-direction: row;">
+        <ng-container *ngIf="!!randomOng">
+          <welight-card-ong
+            [ong]="randomOng"
+            [isCheckable]="true"
+          ></welight-card-ong>
+        </ng-container>
+
+        <ng-container *ngIf="!!randomOng">
+          <welight-card-ong
+            [ong]="randomOng"
+            [isCheckable]="true"
+            [showButtons]="true"
+            [style.margin-left.px]="20"
+          >
+            <div weCardButtons>
+              <button mat-button>+ info</button>
+            </div>
+          </welight-card-ong>
+        </ng-container>
+      </section>
+    </section>
+
+    <section>
+      <h1>Card Style 2</h1>
+
+      <section style="display: inline-flex; flex-direction: row;">
+        <ng-container *ngIf="!!randomOng">
+          <welight-card-ong
+            [ong]="randomOng"
+            templateStyle="horizontal"
+            [isCheckable]="true"
+          ></welight-card-ong>
+        </ng-container>
+
+        <ng-container *ngIf="!!randomOng">
+          <welight-card-ong
+            [ong]="randomOng"
+            templateStyle="horizontal"
+            [isCheckable]="true"
+            [showButtons]="true"
+            [style.margin-left.px]="20"
+          >
+            <div weCardButtons>
+              <button mat-button>+ info</button>
+            </div>
+          </welight-card-ong>
+        </ng-container>
+      </section>
+    </section>
+  `,
+  styles: [''],
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {

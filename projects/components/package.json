@@ -1,23 +1,17 @@
 {
   "name": "@welight/ngx-components",
-  "version": "0.2.1",
+  "version": "0.3.2",
   "peerDependencies": {
     "@angular/common": "^6.0.0 || ^7.0.0",
     "@angular/core": "^6.0.0 || ^7.0.0",
     "@angular/material": "^6.0.0 || ^7.0.0",
     "@angular/cdk": "^6.0.0 || ^7.0.0",
     "@angular/animations": "^6.0.0 || ^7.0.0",
-    "hammerjs": "^2.0.8"
-  },
-  "dependencies": {
+    "hammerjs": "^2.0.8",
     "lodash": "^4.17.11",
     "@welight/welight-api-ts": "^1.0.142"
   },
   "ngPackage": {
-    "whitelistedNonPeerDependencies": [
-      "lodash",
-      "@welight/welight-api-ts"
-    ],
     "lib": {
       "entryFile": "src/index.ts"
     },

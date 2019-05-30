@@ -64,6 +64,9 @@ export class WelightCardOng implements OnInit {
   /** Ong. */
   @Input() ong: Ong.Ong;
 
+  /** template style */
+  @Input() templateStyle: string = 'vertical';
+
   /** EventEmitter for changes on card. */
   @Output()
   change: EventEmitter<any> = new EventEmitter<any>();

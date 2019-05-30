@@ -1,0 +1,83 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <img *ngIf="logoImage" [attr.src]="logoImage" class="logo-image" />
+    <span class="spacer"></span>
+
+    <!-- <mat-icon [matMenuTriggerFor]="appsMenu">apps</mat-icon> -->
+
+    <span style="cursor: pointer; font-size: 25px; color: #707070" [matMenuTriggerFor]="notificationsMenu">
+      <mat-icon [inline]="true">notifications</mat-icon>
+    </span>
+
+    <img class="avatar" src="https://apidev.welight.co/media/doador-empresa/logo/default.png"
+      [matMenuTriggerFor]="toolbarMenu" />
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #toolbarMenu>
+  <section class="settings-menu">
+    <picture [style.background-image]="profileImage">
+      <a href="javascript:void(0);">Alterar</a>
+    </picture>
+    <ng-container *ngFor="let app of apps">
+      <button mat-menu-item type="button" (click)="redirectToApp(app)">
+        <mat-icon>business</mat-icon>
+        {{ app.display_name }}
+      </button>
+    </ng-container>
+    <mat-divider></mat-divider>
+    <button mat-menu-item type="button" (click)="redirectToSettings()">
+      <mat-icon>settings</mat-icon>
+      Configurações
+    </button>
+    <button mat-menu-item type="button" (click)="redirectTo('home', '/saiba-tudo')">
+      <mat-icon>help</mat-icon>
+      FAQ
+    </button>
+    <button mat-menu-item type="button" (click)="redirectTo('home', '/contato')">
+      <mat-icon>mail</mat-icon>
+      Contato
+    </button>
+    <button mat-menu-item type="button" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Sair
+    </button>
+  </section>
+</mat-menu>
+
+<mat-menu #notificationsMenu>
+  <ul class="noticiation-container">
+    <ng-container *ngFor="let notification of notifications">
+      <li class="item">
+        <span class="title">
+          <img *ngIf="!!getNotificationIcon(notification)" [src]="getNotificationIcon(notification)" />
+          <mat-icon *ngIf="!getNotificationIcon(notification)" [inline]="true">brightness_high</mat-icon>
+          {{ notification.title }}
+        </span>
+        <p>{{ notification.message }}</p>
+      </li>
+    </ng-container>
+    <li class="button">
+      <a mat-button href="javascript:void(0);" (click)="redirectToNotifications()">Todas as notificações</a>
+    </li>
+  </ul>
+</mat-menu>
+
+<mat-menu #appsMenu>
+  <div class="apps-menu-container">
+    <a href="javascript:void(0);" class="app-item">
+      <mat-icon [inline]="true">business</mat-icon>
+      <span>Doador</span>
+    </a>
+
+    <a href="javascript:void(0);" class="app-item">
+      <mat-icon [inline]="true">business</mat-icon>
+      <span>Empresa</span>
+    </a>
+
+    <a href="javascript:void(0);" class="app-item">
+      <mat-icon [inline]="true">business</mat-icon>
+      <span>ONG</span>
+    </a>
+  </div>
+</mat-menu>
